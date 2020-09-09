@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  esgi_go:
+    image: esgi_go
+    container_name: esgi_go
+    build: .
+    volumes: 
+      - ./app:/go/src/app
+    ports:
+      - 3000:3000
+    stdin_open: true
