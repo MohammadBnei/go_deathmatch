@@ -2,7 +2,6 @@ package handler
 
 import (
 	"esgi_go/game"
-	p "esgi_go/player"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,7 +9,7 @@ import (
 
 var getStatusHandler = func(channel chan game.Data) func(c *gin.Context) {
 	return func(c *gin.Context) {
-		sendChannel := make(chan []p.Player)
+		sendChannel := make(chan string)
 		channel <- game.Data{Message: "status", SendChannel: sendChannel}
 		players := <-sendChannel
 		c.JSON(http.StatusOK, players)

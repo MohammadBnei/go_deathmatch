@@ -4,7 +4,7 @@ services:
   esgi_go:
     image: esgi_go
     container_name: esgi_go
-    build: .
+    build: app
     volumes: 
       - ./app:/go/src/app
     ports:

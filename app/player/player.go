@@ -1,12 +1,13 @@
 package player
 
 type Player struct {
-	Name  string `json:"name"`
-	Kill  int    `json:"kill"`
-	Death int    `json:"death"`
+	Name     string   `json:"name"`
+	Kill     int      `json:"kill"`
+	Death    int      `json:"death"`
+	Position Position `json:"position"`
 }
 
-type Kill struct {
-	Killer string `json:"killer"`
-	Body   string `json:"body"`
+type Position struct {
+	X int
+	Y int
 }

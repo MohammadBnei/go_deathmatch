@@ -8,9 +8,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type kill struct {
+	Killer string `json:"killer"`
+	Body   string `json:"body"`
+}
+
 var killPlayerHandler = func(channel chan game.Data) func(c *gin.Context) {
 	return func(c *gin.Context) {
-		var rm *p.Kill
+		var rm *kill
 		err := c.ShouldBindJSON(&rm)
 
 		if err != nil {
