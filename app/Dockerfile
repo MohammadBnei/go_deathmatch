@@ -6,6 +6,8 @@ RUN apk add --no-cache bash git openssh
 
 RUN apk add musl-dev gcc
 
+RUN apk add apache2-utils
+
 WORKDIR /go/src/app
 
 COPY app/go.mod .
