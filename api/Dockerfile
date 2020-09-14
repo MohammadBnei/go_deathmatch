@@ -10,8 +10,8 @@ RUN apk add apache2-utils
 
 WORKDIR /go/src/app
 
-COPY app/go.mod .
-COPY app/go.sum .
+COPY api/go.mod .
+COPY api/go.sum .
 
 RUN go mod download
 
